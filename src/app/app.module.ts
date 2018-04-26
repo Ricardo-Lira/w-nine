@@ -10,6 +10,7 @@ import { app_routing } from "./app.routes";
 //SERVICIOS
 
 import { InformacionService } from "./services/informacion.service";
+import { ProductosService } from "./services/productos.service";
 
 //Components
 import { AppComponent } from './app.component';
@@ -37,7 +38,7 @@ import { importExpr } from '@angular/compiler/src/output/output_ast';
     app_routing
    
   ],
-  providers: [InformacionService],
+  providers: [InformacionService,  ProductosService ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
