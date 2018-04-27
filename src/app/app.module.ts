@@ -38,7 +38,9 @@ import { importExpr } from '@angular/compiler/src/output/output_ast';
     app_routing
    
   ],
-  providers: [InformacionService,  ProductosService ],
+  providers: [InformacionService,
+  ProductosService
+ ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

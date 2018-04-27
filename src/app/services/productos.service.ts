@@ -1,13 +1,14 @@
 import { Injectable } from '@angular/core';
 import { Http } from '@angular/http';
+import { timeout } from 'q';
 
 @Injectable()
 export class ProductosService {
 
   productos:any[] = [];
-  cargando:boolean = false;
+  cargando:boolean = true;
 
-  constructor( private http:Http) {
+  constructor( private http:Http ) {
 
     this.cargar_productos();
 
@@ -21,11 +22,16 @@ export class ProductosService {
 
       this.http.get('https://wnine-ebf93.firebaseio.com/productos_idx.json')
                     .subscribe( res =>{
-                      console.log(res.json());
+                      // console.log(res.json());
 
-                      this.cargando = false;
-                      this.productos = res.json();
-         
+                      setTimeout(()=>{
+
+                        this.cargando = false;
+                        this.productos = res.json();
+           
+
+                      },1000)
+                   
       });
       
     // }
